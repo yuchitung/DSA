@@ -1,10 +1,9 @@
-#include <iostream>
 #include "Stack.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     Stack stack = Stack();
 
     cout << "Push a node:10"
@@ -22,10 +21,8 @@ int main()
     stack.pop();
     cout << "First node in the stack:" << stack.peakTop() << "\n";
 
-    cout << "Stack size:" << stack.getSize()
-         << "\n";
-    cout << "Is stack empty:" << stack.isEmpty()
-         << "\n";
+    cout << "Stack size:" << stack.getSize() << "\n";
+    cout << "Is stack empty:" << stack.isEmpty() << "\n";
 
     return 0;
 }

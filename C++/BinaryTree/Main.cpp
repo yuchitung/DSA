@@ -1,10 +1,9 @@
-#include <iostream>
 #include "BinaryTree.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int data[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int size = sizeof(data) / sizeof(data[0]);
     cout << "Create a binary tree with data:";

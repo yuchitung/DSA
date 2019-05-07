@@ -1,10 +1,9 @@
-#include <iostream>
 #include "Queue.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     Queue queue = Queue();
     cout << "Push node:" << 10 << "\n";
     queue.push(10);

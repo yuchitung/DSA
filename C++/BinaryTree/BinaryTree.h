@@ -1,10 +1,10 @@
+#include "TreeNode.h"
 #include <iostream>
 #include <queue>
-#include "TreeNode.h"
 using namespace std;
 
 class BinaryTree {
-   public:
+  public:
     TreeNode *root = NULL;
     BinaryTree(int data[], int size) {
         int count = 1;

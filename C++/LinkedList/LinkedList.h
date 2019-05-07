@@ -1,30 +1,24 @@
-#include <iostream>
 #include "Node.h"
+#include <iostream>
 using namespace std;
 
-class LinkedList
-{
+class LinkedList {
   private:
     int size = 0;
     Node *head, *tail;
 
   public:
-    LinkedList()
-    {
+    LinkedList() {
         head = NULL;
         tail = NULL;
     }
 
-    void addToHead(int value)
-    {
+    void addToHead(int value) {
         Node *node = new Node(value);
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             node->next = head;
             head = node;
         }
@@ -32,16 +26,12 @@ class LinkedList
         size++;
     }
 
-    int addToTail(int value)
-    {
+    int addToTail(int value) {
         Node *node = new Node(value);
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             tail->next = node;
             tail = tail->next;
         }
@@ -49,24 +39,19 @@ class LinkedList
         size++;
     }
 
-    void removeFromHead()
-    {
-        if (head != NULL)
-        {
+    void removeFromHead() {
+        if (head != NULL) {
             int value = head->value;
             head = head->next;
             size--;
         }
     }
 
-    void removeFromTail()
-    {
-        if (tail != NULL)
-        {
+    void removeFromTail() {
+        if (tail != NULL) {
             int value = tail->value;
             Node *current = head;
-            while (current->next != tail)
-            {
+            while (current->next != tail) {
                 current = current->next;
             }
             current->next = NULL;
@@ -75,14 +60,12 @@ class LinkedList
         }
     }
 
-    void reverse()
-    {
+    void reverse() {
         Node *previous = NULL;
         Node *current = head;
         Node *preceding = current->next;
 
-        while (preceding != NULL)
-        {
+        while (preceding != NULL) {
             current->next = previous;
             previous = current;
             current = preceding;
@@ -94,31 +77,24 @@ class LinkedList
         head = current;
     }
 
-    void print()
-    {
+    void print() {
         cout << "Print current list:";
         Node *current = head;
 
-        if (head == NULL)
-        {
+        if (head == NULL) {
             return;
         }
 
-        if (head == tail)
-        {
+        if (head == tail) {
             cout << head->value;
             cout << "\n";
             return;
         }
 
-        while (current != NULL)
-        {
-            if (current != tail)
-            {
+        while (current != NULL) {
+            if (current != tail) {
                 cout << current->value << "->";
-            }
-            else
-            {
+            } else {
                 cout << current->value;
             }
             current = current->next;
@@ -127,20 +103,13 @@ class LinkedList
         delete current;
     }
 
-    bool isEmpty()
-    {
-        if (head == NULL)
-        {
+    bool isEmpty() {
+        if (head == NULL) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
-    int getSize()
-    {
-        return size;
-    }
+    int getSize() { return size; }
 };

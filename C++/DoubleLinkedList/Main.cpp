@@ -1,10 +1,9 @@
-#include <iostream>
 #include "DoubleLinkedList.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     DoubleLinkedList list = DoubleLinkedList();
     list.addToTail(30);
     list.addToHead(20);

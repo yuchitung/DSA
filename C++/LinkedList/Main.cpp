@@ -1,10 +1,9 @@
-#include <iostream>
 #include "LinkedList.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     LinkedList list = LinkedList();
 
     cout << "Add node to head:10"
@@ -29,10 +28,8 @@ int main()
     cout << "Remove node from tail..."
          << "\n";
     list.print();
-    cout << "List size:" << list.getSize()
-         << "\n";
-    cout << "Is list empty:" << list.isEmpty()
-         << "\n";
+    cout << "List size:" << list.getSize() << "\n";
+    cout << "Is list empty:" << list.isEmpty() << "\n";
 
     return 0;
 }

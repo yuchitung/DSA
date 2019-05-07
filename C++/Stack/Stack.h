@@ -1,29 +1,21 @@
-#include <iostream>
 #include "Node.h"
+#include <iostream>
 
 using namespace std;
 
-class Stack
-{
+class Stack {
   private:
     int size = 0;
     Node *top;
 
   public:
-    Stack()
-    {
-        top = NULL;
-    }
+    Stack() { top = NULL; }
 
-    int push(int value)
-    {
+    int push(int value) {
         Node *node = new Node(value);
-        if (top == NULL)
-        {
+        if (top == NULL) {
             top = node;
-        }
-        else
-        {
+        } else {
             node->next = top;
             top = node;
         }
@@ -31,36 +23,22 @@ class Stack
         size++;
     }
 
-    void pop()
-    {
-        if (top != NULL)
-        {
-
+    void pop() {
+        if (top != NULL) {
             top = top->next;
-
             size--;
         }
     }
 
-    bool isEmpty()
-    {
-        if (top == NULL)
-        {
+    bool isEmpty() {
+        if (top == NULL) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
-    int getSize()
-    {
-        return size;
-    }
+    int getSize() { return size; }
 
-    int peakTop()
-    {
-        return top->value;
-    }
+    int peakTop() { return top->value; }
 };

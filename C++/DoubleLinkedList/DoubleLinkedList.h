@@ -1,69 +1,55 @@
-#include <iostream>
 #include "Node.h"
+#include <iostream>
 using namespace std;
-class DoubleLinkedList
-{
+class DoubleLinkedList {
   private:
     Node *head, *tail;
 
   public:
-    DoubleLinkedList()
-    {
+    DoubleLinkedList() {
         head = NULL;
         tail = NULL;
     }
 
-    void addToHead(int value)
-    {
+    void addToHead(int value) {
         Node *node = new Node(value);
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             head->previous = node;
             node->next = head;
             head = node;
         }
     }
 
-    void addToTail(int value)
-    {
+    void addToTail(int value) {
         Node *node = new Node(value);
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             tail->next = node;
             node->previous = tail;
             tail = node;
         }
     }
 
-    void removeFromHead()
-    {
+    void removeFromHead() {
         head = head->next;
         head->previous = NULL;
     }
 
-    void removeFromTail()
-    {
+    void removeFromTail() {
         tail = tail->previous;
         tail->next = NULL;
     }
 
-    void reverse()
-    {
+    void reverse() {
         Node *temp = NULL;
         Node *current = head;
 
-        while (current != NULL)
-        {
+        while (current != NULL) {
             temp = current->previous;
             current->previous = current->next;
             current->next = temp;
@@ -76,26 +62,20 @@ class DoubleLinkedList
         delete current;
     }
 
-    void print()
-    {
+    void print() {
         cout << "Print current list:";
         Node *current = head;
 
-        if (head == tail)
-        {
+        if (head == tail) {
             cout << head->value;
             cout << "\n";
             return;
         }
 
-        while (current != NULL)
-        {
-            if (current != tail)
-            {
+        while (current != NULL) {
+            if (current != tail) {
                 cout << current->value << "->";
-            }
-            else
-            {
+            } else {
                 cout << current->value;
             }
             current = current->next;

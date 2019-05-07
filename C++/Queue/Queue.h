@@ -1,31 +1,25 @@
-#include <iostream>
 #include "Node.h"
+#include <iostream>
 
 using namespace std;
 
-class Queue
-{
+class Queue {
   private:
     int size = 0;
     Node *head, *tail;
 
   public:
-    Queue()
-    {
+    Queue() {
         head = NULL;
         tail = NULL;
     }
 
-    void push(int value)
-    {
+    void push(int value) {
         Node *node = new Node(value);
-        if (head == NULL)
-        {
+        if (head == NULL) {
             head = node;
             tail = node;
-        }
-        else
-        {
+        } else {
             tail->next = node;
             tail = tail->next;
         }
@@ -33,39 +27,31 @@ class Queue
         size++;
     }
 
-    int pop()
-    {
+    int pop() {
         int value = head->value;
         head = head->next;
         size--;
         return value;
     }
 
-    void print()
-    {
+    void print() {
         cout << "Print current queue:";
         Node *current = head;
 
-        if (head == NULL)
-        {
+        if (head == NULL) {
             return;
         }
 
-        if (head == tail)
-        {
+        if (head == tail) {
             cout << head->value;
             cout << "\n";
             return;
         }
 
-        while (current != NULL)
-        {
-            if (current != tail)
-            {
+        while (current != NULL) {
+            if (current != tail) {
                 cout << current->value << "->";
-            }
-            else
-            {
+            } else {
                 cout << current->value;
             }
             current = current->next;
@@ -74,20 +60,13 @@ class Queue
         delete current;
     }
 
-    bool isEmpty()
-    {
-        if (head == NULL)
-        {
+    bool isEmpty() {
+        if (head == NULL) {
             return true;
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
-    int getSize()
-    {
-        return size;
-    }
+    int getSize() { return size; }
 };
