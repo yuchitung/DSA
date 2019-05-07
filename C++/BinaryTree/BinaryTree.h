@@ -74,7 +74,7 @@ class BinaryTree {
     void levelOrder(TreeNode *current) {
         std::queue<TreeNode *> queue;
         queue.push(current);
-        while (queue.front()) {
+        while (!queue.empty()) {
             current = queue.front();
             queue.pop();
             cout << current->value << " ";
